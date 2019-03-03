@@ -28,7 +28,6 @@ class CategoryListViewController: UIViewController, StoryboardInitializable {
     }
     
     @objc func loadData() {
-        print("hui sosi")
         viewModel.fetchCategory()
         stopRefresher()
     }

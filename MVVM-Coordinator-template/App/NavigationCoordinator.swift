@@ -11,7 +11,7 @@ import RxSwift
 
 class NavigationCoordinator: BaseCoordinator<Void> {
     
-    private weak var navigationController: UINavigationController?
+    public var navigationController: UINavigationController?
     
     init(_ navigationController: UINavigationController?) {
         self.navigationController = navigationController ?? UINavigationController()

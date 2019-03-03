@@ -1,20 +1,24 @@
 //
-//  CategoryCoordinator.swift
+//  LentaCoordinator.swift
 //  MVVM-Coordinator-template
 //
 //  Created by Maxim Spiridonov on 03/03/2019.
 //  Copyright © 2019 Maxim Spiridonov. All rights reserved.
 //
 
-
 import UIKit
 import RxSwift
 import SafariServices
 
-class CategoryCoordinator: NavigationCoordinator {
+class LentaCoordinator: BaseCoordinator<Void> {
     
-    override init(_ navigationController: UINavigationController?) {
-        super.init(navigationController)
+    
+    private let navigationController: UINavigationController?
+    public var tb: UITabBarController?
+    
+    override init() {
+        self.navigationController = UINavigationController()
+        
     }
     override func start() -> Observable<Void> {
         
@@ -27,17 +31,18 @@ class CategoryCoordinator: NavigationCoordinator {
         
         self.rootViewController = viewController
         
-        navigationController?.pushViewController(rootViewController!, animated: true)
+        self.navigationController?.viewControllers = [rootViewController!]
         return Observable.never()
     }
     private func showCategoryRecipes(by category: Category) {
         let viewController = CRListViewController.initFromStoryboard(name: "Main")
         viewController.viewModel = CRListViewModel(category: category)
         viewController.title = category.title
-        super.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     
 }
+
 
 

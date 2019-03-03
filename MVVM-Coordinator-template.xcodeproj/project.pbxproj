@@ -28,6 +28,10 @@
 		8A858EA8222BE95300BF23BA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EA7222BE95300BF23BA /* MainTabBarController.swift */; };
 		8A858EAD222BEAE100BF23BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A858EAC222BEAE100BF23BA /* Assets.xcassets */; };
 		8A858EB1222BEC1A00BF23BA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB0222BEC1A00BF23BA /* NavigationCoordinator.swift */; };
+		8A858EB4222C049600BF23BA /* LentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB3222C049600BF23BA /* LentaViewController.swift */; };
+		8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB5222C04A300BF23BA /* LentaViewModel.swift */; };
+		8A858EB8222C04B100BF23BA /* LentaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB7222C04B100BF23BA /* LentaCell.swift */; };
+		8A858EBA222C056A00BF23BA /* LentaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		8A858EA7222BE95300BF23BA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8A858EAC222BEAE100BF23BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A858EB0222BEC1A00BF23BA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		8A858EB3222C049600BF23BA /* LentaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaViewController.swift; sourceTree = "<group>"; };
+		8A858EB5222C04A300BF23BA /* LentaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaViewModel.swift; sourceTree = "<group>"; };
+		8A858EB7222C04B100BF23BA /* LentaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaCell.swift; sourceTree = "<group>"; };
+		8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaCoordinator.swift; sourceTree = "<group>"; };
 		B108B44E1F54E89AC1DD3FBA /* Pods-MVVM-Coordinator-template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator-template.release.xcconfig"; path = "Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template.release.xcconfig"; sourceTree = "<group>"; };
 		B863B9E598D90C884B602048 /* Pods_MVVM_Coordinator_template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Coordinator_template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				8A858E91222BE35100BF23BA /* MainTabBar */,
+				8A858EB2222C047B00BF23BA /* Lenta */,
 				8A858E96222BE3C000BF23BA /* Category */,
 			);
 			path = Classes;
@@ -195,6 +204,17 @@
 				8A858EA5222BE53500BF23BA /* CRListCell.swift */,
 			);
 			path = CategoryRecipes;
+			sourceTree = "<group>";
+		};
+		8A858EB2222C047B00BF23BA /* Lenta */ = {
+			isa = PBXGroup;
+			children = (
+				8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */,
+				8A858EB3222C049600BF23BA /* LentaViewController.swift */,
+				8A858EB5222C04A300BF23BA /* LentaViewModel.swift */,
+				8A858EB7222C04B100BF23BA /* LentaCell.swift */,
+			);
+			path = Lenta;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +347,7 @@
 				8A858E83222BE1C800BF23BA /* AppCoordinator.swift in Sources */,
 				8A858E8A222BE2A000BF23BA /* StoryboardInitializable.swift in Sources */,
 				8A858E85222BE1DC00BF23BA /* CoordinatorProtocol.swift in Sources */,
+				8A858EB8222C04B100BF23BA /* LentaCell.swift in Sources */,
 				8A858EA2222BE4FF00BF23BA /* CRListViewController.swift in Sources */,
 				8A858E9D222BE47600BF23BA /* CategoryListViewModel.swift in Sources */,
 				8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */,
@@ -334,9 +355,12 @@
 				8A858EA8222BE95300BF23BA /* MainTabBarController.swift in Sources */,
 				8A858E99222BE40800BF23BA /* CategoryCoordinator.swift in Sources */,
 				8A858EB1222BEC1A00BF23BA /* NavigationCoordinator.swift in Sources */,
+				8A858EBA222C056A00BF23BA /* LentaCoordinator.swift in Sources */,
 				8A858E9F222BE49A00BF23BA /* CategoryListCell.swift in Sources */,
 				8A858EA4222BE50C00BF23BA /* CRListViewModel.swift in Sources */,
+				8A858EB4222C049600BF23BA /* LentaViewController.swift in Sources */,
 				8A858E8D222BE30000BF23BA /* Category.swift in Sources */,
+				8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,10 +24,10 @@ class TabCoordinator: AppCoordinator {
         
         tabController = MainTabBarController.initFromStoryboard(name: "Main")
         
-        categoryCoordinator = CategoryCoordinator()
+        categoryCoordinator = CategoryCoordinator(tabController.navigationController)
         categoryCoordinator.start()
         
-        categoryCoordinator2 = CategoryCoordinator()
+        categoryCoordinator2 = CategoryCoordinator(tabController.navigationController)
         categoryCoordinator2.start()
         
         var controllers: [UIViewController] = []
@@ -37,7 +37,7 @@ class TabCoordinator: AppCoordinator {
         
         TabCoordinator.setTabProperty(viewController: categoryListViewController, title: "Category")
         TabCoordinator.setTabProperty(viewController: categoryListViewController2, title: "Category2")
-        
+//        categoryListViewController.navigationController
         controllers.append(categoryListViewController.navigationController!)
         controllers.append(categoryListViewController2.navigationController!)
         

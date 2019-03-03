@@ -1,5 +1,5 @@
 //
-//  CategoryListViewModel.swift
+//  LentaViewModel.swift
 //  MVVM-Coordinator-template
 //
 //  Created by Maxim Spiridonov on 03/03/2019.
@@ -10,8 +10,8 @@
 import Foundation
 import RxSwift
 
-class CategoryListViewModel  {
-    public static var gg = 1
+class LentaViewModel  {
+    
     // MARK: - Inputs
     let selectCategory: AnyObserver<Category>
     // MARK: - Outputs
