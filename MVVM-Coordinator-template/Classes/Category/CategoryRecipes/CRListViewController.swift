@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CRListViewController.swift
 //  MVVM-Coordinator-template
 //
 //  Created by Maxim Spiridonov on 03/03/2019.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+class CRListViewController: UIViewController, StoryboardInitializable {
+    
+    var viewModel: CRListViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupBindings()
     }
-
-
+    
+    private func setupBindings() {
+        
+    }
 }
-
