@@ -6,6 +6,9 @@ target 'MVVM-Coordinator-template' do
   use_frameworks!
 	pod 'RxSwift'
 	pod 'RxCocoa'
+	pod 'Alamofire'
+	pod 'SwiftyJSON'
+	pod 'Kingfisher'
   # Pods for MVVM-Coordinator-template
 
 end

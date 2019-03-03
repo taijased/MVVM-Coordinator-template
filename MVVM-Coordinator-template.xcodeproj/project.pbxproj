@@ -32,6 +32,10 @@
 		8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB5222C04A300BF23BA /* LentaViewModel.swift */; };
 		8A858EB8222C04B100BF23BA /* LentaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB7222C04B100BF23BA /* LentaCell.swift */; };
 		8A858EBA222C056A00BF23BA /* LentaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */; };
+		8A858EBD222C1B5600BF23BA /* WorkshopAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EBC222C1B5600BF23BA /* WorkshopAPI.swift */; };
+		8A858EC0222C1C5800BF23BA /* ENV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EBF222C1C5800BF23BA /* ENV.swift */; };
+		8A858EC3222C2C2000BF23BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EC2222C2C2000BF23BA /* RecipeViewController.swift */; };
+		8A858EC5222C2C3000BF23BA /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EC4222C2C3000BF23BA /* RecipeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		8A858EB5222C04A300BF23BA /* LentaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaViewModel.swift; sourceTree = "<group>"; };
 		8A858EB7222C04B100BF23BA /* LentaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaCell.swift; sourceTree = "<group>"; };
 		8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaCoordinator.swift; sourceTree = "<group>"; };
+		8A858EBC222C1B5600BF23BA /* WorkshopAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopAPI.swift; sourceTree = "<group>"; };
+		8A858EBF222C1C5800BF23BA /* ENV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENV.swift; sourceTree = "<group>"; };
+		8A858EC2222C2C2000BF23BA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		8A858EC4222C2C3000BF23BA /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		B108B44E1F54E89AC1DD3FBA /* Pods-MVVM-Coordinator-template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator-template.release.xcconfig"; path = "Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template.release.xcconfig"; sourceTree = "<group>"; };
 		B863B9E598D90C884B602048 /* Pods_MVVM_Coordinator_template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Coordinator_template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +128,8 @@
 				8A858E86222BE27200BF23BA /* Library */,
 				8A858E8B222BE2EC00BF23BA /* Models */,
 				8A858E90222BE34800BF23BA /* Classes */,
+				8A858EBE222C1C2E00BF23BA /* Utils */,
+				8A858EBB222C1B3E00BF23BA /* API */,
 				8A858E73222BE11A00BF23BA /* Main.storyboard */,
 				8A858EAC222BEAE100BF23BA /* Assets.xcassets */,
 				8A858E78222BE11B00BF23BA /* LaunchScreen.storyboard */,
@@ -162,6 +172,7 @@
 			children = (
 				8A858E91222BE35100BF23BA /* MainTabBar */,
 				8A858EB2222C047B00BF23BA /* Lenta */,
+				8A858EC1222C2C0B00BF23BA /* Recipe */,
 				8A858E96222BE3C000BF23BA /* Category */,
 			);
 			path = Classes;
@@ -215,6 +226,31 @@
 				8A858EB7222C04B100BF23BA /* LentaCell.swift */,
 			);
 			path = Lenta;
+			sourceTree = "<group>";
+		};
+		8A858EBB222C1B3E00BF23BA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8A858EBC222C1B5600BF23BA /* WorkshopAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		8A858EBE222C1C2E00BF23BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A858EBF222C1C5800BF23BA /* ENV.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A858EC1222C2C0B00BF23BA /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				8A858EC2222C2C2000BF23BA /* RecipeViewController.swift */,
+				8A858EC4222C2C3000BF23BA /* RecipeViewModel.swift */,
+			);
+			path = Recipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,17 +353,23 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -342,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A858E88222BE28800BF23BA /* BaseCoordinator.swift in Sources */,
+				8A858EC0222C1C5800BF23BA /* ENV.swift in Sources */,
 				8A858E93222BE37100BF23BA /* TabCoordinator.swift in Sources */,
 				8A858EA6222BE53500BF23BA /* CRListCell.swift in Sources */,
 				8A858E83222BE1C800BF23BA /* AppCoordinator.swift in Sources */,
@@ -353,12 +396,15 @@
 				8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */,
 				8A858E9B222BE43C00BF23BA /* CategoryListViewController.swift in Sources */,
 				8A858EA8222BE95300BF23BA /* MainTabBarController.swift in Sources */,
+				8A858EC5222C2C3000BF23BA /* RecipeViewModel.swift in Sources */,
 				8A858E99222BE40800BF23BA /* CategoryCoordinator.swift in Sources */,
+				8A858EBD222C1B5600BF23BA /* WorkshopAPI.swift in Sources */,
 				8A858EB1222BEC1A00BF23BA /* NavigationCoordinator.swift in Sources */,
 				8A858EBA222C056A00BF23BA /* LentaCoordinator.swift in Sources */,
 				8A858E9F222BE49A00BF23BA /* CategoryListCell.swift in Sources */,
 				8A858EA4222BE50C00BF23BA /* CRListViewModel.swift in Sources */,
 				8A858EB4222C049600BF23BA /* LentaViewController.swift in Sources */,
+				8A858EC3222C2C2000BF23BA /* RecipeViewController.swift in Sources */,
 				8A858E8D222BE30000BF23BA /* Category.swift in Sources */,
 				8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,

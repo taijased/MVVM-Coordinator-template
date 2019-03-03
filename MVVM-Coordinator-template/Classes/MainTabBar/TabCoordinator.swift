@@ -15,57 +15,54 @@ class TabCoordinator: AppCoordinator {
     
     
     let tabController: UITabBarController
-    
     let categoryCoordinator: CategoryCoordinator
-    let categoryCoordinator2: CategoryCoordinator
+    let lentaCoordinator: LentaCoordinator
     
     
     override init(window: UIWindow){
         
         tabController = MainTabBarController.initFromStoryboard(name: "Main")
         
+        lentaCoordinator = LentaCoordinator(tabController.navigationController)
+        lentaCoordinator.start()
+        
         categoryCoordinator = CategoryCoordinator(tabController.navigationController)
         categoryCoordinator.start()
         
-        categoryCoordinator2 = CategoryCoordinator(tabController.navigationController)
-        categoryCoordinator2.start()
+        super.init(window: window)
         
+        setupControllers()
+    
+        
+        
+    }
+    private func setupControllers() {
         var controllers: [UIViewController] = []
         
         let categoryListViewController = categoryCoordinator.rootViewController!
-        let categoryListViewController2 = categoryCoordinator2.rootViewController!
+        let lentaViewController = lentaCoordinator.rootViewController!
         
-        TabCoordinator.setTabProperty(viewController: categoryListViewController, title: "Category")
-        TabCoordinator.setTabProperty(viewController: categoryListViewController2, title: "Category2")
-//        categoryListViewController.navigationController
+        setTabProperty(viewController: categoryListViewController, defaultImage: UIImage(named: "categories")!)
+        setTabProperty(viewController: lentaViewController, defaultImage: UIImage(named: "home")!)
+
+        controllers.append(lentaViewController.navigationController!)
         controllers.append(categoryListViewController.navigationController!)
-        controllers.append(categoryListViewController2.navigationController!)
+        
         
         tabController.viewControllers = controllers
         tabController.tabBar.isTranslucent = false
-        super.init(window: window)
+//       to do set tab color selected
     }
     
     
     
-    static func setTabProperty(viewController: UIViewController, title: String) {
-        
-        let defaultImage = UIImage(named: "categories")!
-        
-        let selectedImage = UIImage(named: "categories")!
-
-        let tabBarItems = (title: title, image: defaultImage, selectedImage: selectedImage)
-
-        let tabBarItem = UITabBarItem(title: tabBarItems.title, image: tabBarItems.image, selectedImage: tabBarItems.selectedImage)
-
+    private func setTabProperty(viewController: UIViewController, defaultImage: UIImage) {
+        let tabBarItem = UITabBarItem(title: "", image: defaultImage, selectedImage: defaultImage)
+       
         viewController.tabBarItem = tabBarItem
-        
     }
     
-    var coordinators: [BaseCoordinator<Void>] {
-        return [categoryCoordinator, categoryCoordinator2]
-    }
-    
+
     override func start() -> Observable<Void> {
         
         self.rootViewController = tabController

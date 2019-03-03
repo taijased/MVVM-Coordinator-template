@@ -9,7 +9,7 @@
 
 import UIKit
 import RxSwift
-import SafariServices
+
 
 class CategoryCoordinator: NavigationCoordinator {
     

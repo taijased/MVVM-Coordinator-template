@@ -8,41 +8,37 @@
 
 import UIKit
 import RxSwift
-import SafariServices
 
-class LentaCoordinator: BaseCoordinator<Void> {
+
+class LentaCoordinator: NavigationCoordinator {
     
-    
-    private let navigationController: UINavigationController?
-    public var tb: UITabBarController?
-    
-    override init() {
-        self.navigationController = UINavigationController()
-        
+    override init(_ navigationController: UINavigationController?) {
+        super.init(navigationController)
     }
     override func start() -> Observable<Void> {
         
-        let viewModel = CategoryListViewModel()
-        let viewController = CategoryListViewController.initFromStoryboard(name: "Main")
+        let viewModel = LentaViewModel()
+        
+        let viewController = LentaViewController.initFromStoryboard(name: "Main")
         viewController.viewModel = viewModel
-        viewModel.showCategoryRecipes
-            .subscribe(onNext: { [weak self] in self?.showCategoryRecipes(by: $0) })
+        viewModel.showRecipe
+            .subscribe(onNext: { [weak self] in self?.showRecipe(by: $0) })
             .disposed(by: disposeBag)
         
         self.rootViewController = viewController
         
-        self.navigationController?.viewControllers = [rootViewController!]
+        navigationController?.pushViewController(rootViewController!, animated: true)
         return Observable.never()
     }
-    private func showCategoryRecipes(by category: Category) {
-        let viewController = CRListViewController.initFromStoryboard(name: "Main")
-        viewController.viewModel = CRListViewModel(category: category)
-        viewController.title = category.title
-        self.navigationController?.pushViewController(viewController, animated: true)
+    private func showRecipe(by recipe: Recipe) {
+        print(recipe)
+//        let viewController = CRListViewController.initFromStoryboard(name: "Main")
+//        viewController.viewModel = CRListViewModel(category: category)
+//        viewController.title = category.title
+//        super.navigationController?.pushViewController(viewController, animated: true)
     }
     
     
 }
-
 
 
