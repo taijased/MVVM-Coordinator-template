@@ -15,10 +15,12 @@ import Kingfisher
 class LentaViewController: UIViewController, StoryboardInitializable {
     
     let disposeBag = DisposeBag()
-    @IBOutlet weak var collectionView: UICollectionView!
     var viewModel: LentaViewModel!
     private let refreshControl = UIRefreshControl()
     var fetchingMore: Bool = false
+    let cellIdentifier = "lentaCell"
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
@@ -33,8 +35,8 @@ class LentaViewController: UIViewController, StoryboardInitializable {
         viewModel.recipes
             .observeOn(MainScheduler.instance)
             .do(onNext: { [weak self] _ in self?.refreshControl.endRefreshing() })
-            .bind(to: collectionView.rx.items(cellIdentifier: "lentaCell", cellType: LentaCell.self)) { (_, recipe, cell) in
-                self.setupCategoryListCell(cell, recipe)
+            .bind(to: collectionView.rx.items(cellIdentifier: self.cellIdentifier, cellType: LentaCell.self)) { (_, recipe, cell) in
+                self.setupRecipeCell(cell, recipe)
             }
             .disposed(by: disposeBag)
         collectionView.rx.modelSelected(Recipe.self)
@@ -42,7 +44,7 @@ class LentaViewController: UIViewController, StoryboardInitializable {
             .disposed(by: disposeBag)
     }
     
-    private func setupCategoryListCell(_ cell: LentaCell, _ recipe: Recipe) {
+    private func setupRecipeCell(_ cell: LentaCell, _ recipe: Recipe) {
         cell.recipeTitle?.text = recipe.title
         cell.recipeAuthor.text = recipe.author
         cell.recipeTime.text = String(recipe.timing) + " минут"
@@ -90,13 +92,13 @@ class LentaViewController: UIViewController, StoryboardInitializable {
             }
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+//    }
 }

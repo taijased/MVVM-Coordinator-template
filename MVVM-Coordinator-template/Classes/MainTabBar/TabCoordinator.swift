@@ -48,10 +48,21 @@ class TabCoordinator: AppCoordinator {
         controllers.append(lentaViewController.navigationController!)
         controllers.append(categoryListViewController.navigationController!)
         
-        
         tabController.viewControllers = controllers
         tabController.tabBar.isTranslucent = false
 //       to do set tab color selected
+        
+//        add above shadow box
+        
+//        tabController.tabBar.layer.opacity = 0.9
+        
+        tabController.tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabController.tabBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        tabController.tabBar.layer.shadowRadius = 5
+        tabController.tabBar.layer.shadowOpacity = 0.25
+        tabController.tabBar.layer.masksToBounds = false
+        
+        
     }
     
     

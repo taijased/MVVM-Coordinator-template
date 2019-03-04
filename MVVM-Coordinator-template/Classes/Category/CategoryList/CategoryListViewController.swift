@@ -52,14 +52,14 @@ class CategoryListViewController: UIViewController, StoryboardInitializable {
     private func setupCategoryListCell(_ cell: CategoryListCell, _ category: Category) {
         cell.categoryTitle.text = category.title
     }
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(animated)
-    //        navigationController?.setNavigationBarHidden(true, animated: animated)
-    //    }
-    //
-    //    override func viewWillDisappear(_ animated: Bool) {
-    //        super.viewWillDisappear(animated)
-    //        navigationController?.setNavigationBarHidden(true, animated: animated)
-    //    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 }
 

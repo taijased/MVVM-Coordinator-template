@@ -27,8 +27,8 @@ class WorkshopAPI {
                     print("Ошибка при запросе данных \(String(describing: response.result.error))")
                     return
                 }
-                for (index, item) in JSON(response.value)["recipes"] {
-                    var recipe = Recipe(isLiked: item["isLiked"].boolValue, isNew: item["isNew"].boolValue, commentCount: item["commentCount"].intValue, imageUrl: item["imageUrl"].stringValue, likeCount: item["likeCount"].intValue, title: item["title"].stringValue, author: item["author"].stringValue, timing: item["timing"].intValue, guid: item["guid"].stringValue)
+                for (_, item) in JSON(response.value!)["recipes"] {
+                    let recipe = Recipe(isLiked: item["isLiked"].boolValue, isNew: item["isNew"].boolValue, commentCount: item["commentCount"].intValue, imageUrl: item["imageUrl"].stringValue, likeCount: item["likeCount"].intValue, title: item["title"].stringValue, author: item["author"].stringValue, timing: item["timing"].intValue, guid: item["guid"].stringValue)
                     result.append(recipe)
                 }
                 self.infinity = !result.isEmpty

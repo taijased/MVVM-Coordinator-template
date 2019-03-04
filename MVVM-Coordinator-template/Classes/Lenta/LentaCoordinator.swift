@@ -12,7 +12,9 @@ import RxSwift
 
 class LentaCoordinator: NavigationCoordinator {
     
+    
     override init(_ navigationController: UINavigationController?) {
+    
         super.init(navigationController)
     }
     override func start() -> Observable<Void> {
@@ -31,11 +33,22 @@ class LentaCoordinator: NavigationCoordinator {
         return Observable.never()
     }
     private func showRecipe(by recipe: Recipe) {
-        print(recipe)
-//        let viewController = CRListViewController.initFromStoryboard(name: "Main")
-//        viewController.viewModel = CRListViewModel(category: category)
-//        viewController.title = category.title
+        
+        let viewController = RecipeViewController.initFromStoryboard(name: "Main")
+        
+        viewController.viewModel = RecipeViewModel(recipe)
+        viewController.viewModel.hiddenRecipe
+            .subscribe(onNext: { [weak self] in self?.hiddenRecipe(by: $0) })
+            .disposed(by: disposeBag)
+        
+        viewController.title = recipe.title
+        super.rootViewController?.navigationController?.pushViewController(viewController, animated: true)
+//        self.rootViewController?.navigationController?.pushViewController(viewController, animated: true)s
 //        super.navigationController?.pushViewController(viewController, animated: true)
+    }
+    private func hiddenRecipe(by recipe: Recipe) {
+        print(recipe)
+        
     }
     
     

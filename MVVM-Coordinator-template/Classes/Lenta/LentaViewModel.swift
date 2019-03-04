@@ -31,7 +31,7 @@ class LentaViewModel  {
         self.showRecipe = _selectRecipe.asObservable()
         self.dataManager = WorkshopAPI()
         
-        var recipe = [Recipe(isLiked: true, isNew: true, commentCount: 34, imageUrl: "", likeCount: 42, title: "Стулья Тимура", author: "Тимур Загиров", timing: 69, guid: "alogdanm"),
+        let recipe = [Recipe(isLiked: true, isNew: true, commentCount: 34, imageUrl: "", likeCount: 42, title: "Стулья Тимура", author: "Тимур Загиров", timing: 69, guid: "alogdanm"),
                       Recipe(isLiked: true, isNew: true, commentCount: 34, imageUrl: "", likeCount: 42, title: "Диваны", author: "Имашев Александр", timing: 69, guid: "alogdanm"),
                       Recipe(isLiked: true, isNew: true, commentCount: 34, imageUrl: "", likeCount: 42, title: "Шкафы", author: "Спиридонов Максим", timing: 69, guid: "alogdanm")]
         self.recipes = Observable.just(recipe)

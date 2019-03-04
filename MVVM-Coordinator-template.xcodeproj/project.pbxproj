@@ -34,8 +34,8 @@
 		8A858EBA222C056A00BF23BA /* LentaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */; };
 		8A858EBD222C1B5600BF23BA /* WorkshopAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EBC222C1B5600BF23BA /* WorkshopAPI.swift */; };
 		8A858EC0222C1C5800BF23BA /* ENV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EBF222C1C5800BF23BA /* ENV.swift */; };
-		8A858EC3222C2C2000BF23BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EC2222C2C2000BF23BA /* RecipeViewController.swift */; };
-		8A858EC5222C2C3000BF23BA /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EC4222C2C3000BF23BA /* RecipeViewModel.swift */; };
+		8A858EC8222C333C00BF23BA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EC7222C333C00BF23BA /* RecipeViewController.swift */; };
+		8A858ECA222C357200BF23BA /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858EC9222C357200BF23BA /* RecipeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +68,8 @@
 		8A858EB9222C056A00BF23BA /* LentaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaCoordinator.swift; sourceTree = "<group>"; };
 		8A858EBC222C1B5600BF23BA /* WorkshopAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopAPI.swift; sourceTree = "<group>"; };
 		8A858EBF222C1C5800BF23BA /* ENV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENV.swift; sourceTree = "<group>"; };
-		8A858EC2222C2C2000BF23BA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		8A858EC4222C2C3000BF23BA /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		8A858EC7222C333C00BF23BA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		8A858EC9222C357200BF23BA /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		B108B44E1F54E89AC1DD3FBA /* Pods-MVVM-Coordinator-template.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator-template.release.xcconfig"; path = "Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template.release.xcconfig"; sourceTree = "<group>"; };
 		B863B9E598D90C884B602048 /* Pods_MVVM_Coordinator_template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Coordinator_template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,7 +172,7 @@
 			children = (
 				8A858E91222BE35100BF23BA /* MainTabBar */,
 				8A858EB2222C047B00BF23BA /* Lenta */,
-				8A858EC1222C2C0B00BF23BA /* Recipe */,
+				8A858EC6222C332800BF23BA /* Recipe */,
 				8A858E96222BE3C000BF23BA /* Category */,
 			);
 			path = Classes;
@@ -244,11 +244,11 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		8A858EC1222C2C0B00BF23BA /* Recipe */ = {
+		8A858EC6222C332800BF23BA /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				8A858EC2222C2C2000BF23BA /* RecipeViewController.swift */,
-				8A858EC4222C2C3000BF23BA /* RecipeViewModel.swift */,
+				8A858EC7222C333C00BF23BA /* RecipeViewController.swift */,
+				8A858EC9222C357200BF23BA /* RecipeViewModel.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -396,7 +396,7 @@
 				8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */,
 				8A858E9B222BE43C00BF23BA /* CategoryListViewController.swift in Sources */,
 				8A858EA8222BE95300BF23BA /* MainTabBarController.swift in Sources */,
-				8A858EC5222C2C3000BF23BA /* RecipeViewModel.swift in Sources */,
+				8A858ECA222C357200BF23BA /* RecipeViewModel.swift in Sources */,
 				8A858E99222BE40800BF23BA /* CategoryCoordinator.swift in Sources */,
 				8A858EBD222C1B5600BF23BA /* WorkshopAPI.swift in Sources */,
 				8A858EB1222BEC1A00BF23BA /* NavigationCoordinator.swift in Sources */,
@@ -404,7 +404,7 @@
 				8A858E9F222BE49A00BF23BA /* CategoryListCell.swift in Sources */,
 				8A858EA4222BE50C00BF23BA /* CRListViewModel.swift in Sources */,
 				8A858EB4222C049600BF23BA /* LentaViewController.swift in Sources */,
-				8A858EC3222C2C2000BF23BA /* RecipeViewController.swift in Sources */,
+				8A858EC8222C333C00BF23BA /* RecipeViewController.swift in Sources */,
 				8A858E8D222BE30000BF23BA /* Category.swift in Sources */,
 				8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,

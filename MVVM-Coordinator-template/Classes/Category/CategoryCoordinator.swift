@@ -34,9 +34,24 @@ class CategoryCoordinator: NavigationCoordinator {
         let viewController = CRListViewController.initFromStoryboard(name: "Main")
         viewController.viewModel = CRListViewModel(category: category)
         viewController.title = category.title
+        viewController.viewModel.showRecipe
+            .subscribe(onNext: { [weak self] in self?.showRecipe(by: $0) })
+            .disposed(by: disposeBag)
         super.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    
+    private func showRecipe(by recipe: Recipe) {
+        
+        let viewController = RecipeViewController.initFromStoryboard(name: "Main")
+
+        viewController.viewModel = RecipeViewModel(recipe)
+        viewController.title = recipe.title
+        super.rootViewController?.navigationController?.present(viewController, animated: true)
+//        super.rootViewController?.navigationController?.pushViewController(viewController, animated: true)
+//                self.rootViewController?.navigationController?.pushViewController(viewController, animated: true)s
+//                super.navigationController?.pushViewController(viewController, animated: true)
+    }
     
 }
 
