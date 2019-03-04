@@ -17,6 +17,7 @@ class TabCoordinator: AppCoordinator {
     let tabController: UITabBarController
     let categoryCoordinator: CategoryCoordinator
     let lentaCoordinator: LentaCoordinator
+    let notificationCoordinator: NotificationCoordinator
     
     
     override init(window: UIWindow){
@@ -28,6 +29,10 @@ class TabCoordinator: AppCoordinator {
         
         categoryCoordinator = CategoryCoordinator(tabController.navigationController)
         categoryCoordinator.start()
+        
+        notificationCoordinator = NotificationCoordinator(tabController.navigationController)
+        notificationCoordinator.start()
+        
         
         super.init(window: window)
         
@@ -41,20 +46,28 @@ class TabCoordinator: AppCoordinator {
         
         let categoryListViewController = categoryCoordinator.rootViewController!
         let lentaViewController = lentaCoordinator.rootViewController!
+        let notificationViewController = notificationCoordinator.rootViewController!
+        
         
         setTabProperty(viewController: categoryListViewController, defaultImage: UIImage(named: "categories")!)
         setTabProperty(viewController: lentaViewController, defaultImage: UIImage(named: "home")!)
+        setTabProperty(viewController: notificationViewController, defaultImage: UIImage(named: "notifications")!)
 
+        
         controllers.append(lentaViewController.navigationController!)
         controllers.append(categoryListViewController.navigationController!)
+        controllers.append(notificationViewController.navigationController!)
         
+        
+       
         tabController.viewControllers = controllers
         tabController.tabBar.isTranslucent = false
 //       to do set tab color selected
-        
+        tabController.tabBar.tintColor = UIColor(red: 102, green: 193, blue: 92)
 //        add above shadow box
         
 //        tabController.tabBar.layer.opacity = 0.9
+        
         
         tabController.tabBar.layer.shadowColor = UIColor.black.cgColor
         tabController.tabBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)

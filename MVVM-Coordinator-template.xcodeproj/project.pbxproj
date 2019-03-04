@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		364CBAB756070E4001E87E06 /* Pods_MVVM_Coordinator_template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B863B9E598D90C884B602048 /* Pods_MVVM_Coordinator_template.framework */; };
 		8A070957222D094800530F24 /* RecipeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070956222D094800530F24 /* RecipeCoordinator.swift */; };
+		8A07095A222D230400530F24 /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070959222D230400530F24 /* NotificationCoordinator.swift */; };
+		8A07095C222D231E00530F24 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07095B222D231E00530F24 /* NotificationViewController.swift */; };
+		8A07095E222D233300530F24 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07095D222D233300530F24 /* NotificationViewModel.swift */; };
+		8A070960222D234200530F24 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07095F222D234200530F24 /* NotificationCell.swift */; };
+		8A070962222D271700530F24 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070961222D271700530F24 /* Notification.swift */; };
+		8A070964222D337900530F24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070963222D337900530F24 /* Extensions.swift */; };
 		8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858E6F222BE11A00BF23BA /* AppDelegate.swift */; };
 		8A858E75222BE11A00BF23BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E73222BE11A00BF23BA /* Main.storyboard */; };
 		8A858E7A222BE11B00BF23BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E78222BE11B00BF23BA /* LaunchScreen.storyboard */; };
@@ -42,6 +48,12 @@
 /* Begin PBXFileReference section */
 		4B8BCC28E39100EA780F888C /* Pods-MVVM-Coordinator-template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator-template.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template.debug.xcconfig"; sourceTree = "<group>"; };
 		8A070956222D094800530F24 /* RecipeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCoordinator.swift; sourceTree = "<group>"; };
+		8A070959222D230400530F24 /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
+		8A07095B222D231E00530F24 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		8A07095D222D233300530F24 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		8A07095F222D234200530F24 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		8A070961222D271700530F24 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		8A070963222D337900530F24 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8A858E6C222BE11A00BF23BA /* MVVM-Coordinator-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A858E6F222BE11A00BF23BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A858E74222BE11A00BF23BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +117,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8A070958222D22DA00530F24 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8A070959222D230400530F24 /* NotificationCoordinator.swift */,
+				8A07095B222D231E00530F24 /* NotificationViewController.swift */,
+				8A07095D222D233300530F24 /* NotificationViewModel.swift */,
+				8A07095F222D234200530F24 /* NotificationCell.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		8A858E63222BE11A00BF23BA = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +179,7 @@
 			children = (
 				8A858E87222BE28800BF23BA /* BaseCoordinator.swift */,
 				8A858E89222BE2A000BF23BA /* StoryboardInitializable.swift */,
+				8A070963222D337900530F24 /* Extensions.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -165,6 +189,7 @@
 			children = (
 				8A858E8C222BE30000BF23BA /* Category.swift */,
 				8A858E8E222BE32400BF23BA /* Recipe.swift */,
+				8A070961222D271700530F24 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +201,7 @@
 				8A858EB2222C047B00BF23BA /* Lenta */,
 				8A858EC6222C332800BF23BA /* Recipe */,
 				8A858E96222BE3C000BF23BA /* Category */,
+				8A070958222D22DA00530F24 /* Notifications */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -396,6 +422,8 @@
 				8A858E85222BE1DC00BF23BA /* CoordinatorProtocol.swift in Sources */,
 				8A858EB8222C04B100BF23BA /* LentaCell.swift in Sources */,
 				8A858EA2222BE4FF00BF23BA /* CRListViewController.swift in Sources */,
+				8A07095C222D231E00530F24 /* NotificationViewController.swift in Sources */,
+				8A07095A222D230400530F24 /* NotificationCoordinator.swift in Sources */,
 				8A858E9D222BE47600BF23BA /* CategoryListViewModel.swift in Sources */,
 				8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */,
 				8A858E9B222BE43C00BF23BA /* CategoryListViewController.swift in Sources */,
@@ -411,7 +439,11 @@
 				8A858EC8222C333C00BF23BA /* RecipeViewController.swift in Sources */,
 				8A858E8D222BE30000BF23BA /* Category.swift in Sources */,
 				8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */,
+				8A070964222D337900530F24 /* Extensions.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,
+				8A070960222D234200530F24 /* NotificationCell.swift in Sources */,
+				8A070962222D271700530F24 /* Notification.swift in Sources */,
+				8A07095E222D233300530F24 /* NotificationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
