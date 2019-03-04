@@ -15,6 +15,10 @@
 		8A070960222D234200530F24 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07095F222D234200530F24 /* NotificationCell.swift */; };
 		8A070962222D271700530F24 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070961222D271700530F24 /* Notification.swift */; };
 		8A070964222D337900530F24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070963222D337900530F24 /* Extensions.swift */; };
+		8A070968222D34E800530F24 /* AccauntCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070967222D34E800530F24 /* AccauntCoordinator.swift */; };
+		8A07096A222D34FF00530F24 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070969222D34FF00530F24 /* AccountViewController.swift */; };
+		8A07096C222D351600530F24 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07096B222D351600530F24 /* AccountViewModel.swift */; };
+		8A07096E222D35BC00530F24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07096D222D35BC00530F24 /* User.swift */; };
 		8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858E6F222BE11A00BF23BA /* AppDelegate.swift */; };
 		8A858E75222BE11A00BF23BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E73222BE11A00BF23BA /* Main.storyboard */; };
 		8A858E7A222BE11B00BF23BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E78222BE11B00BF23BA /* LaunchScreen.storyboard */; };
@@ -54,6 +58,10 @@
 		8A07095F222D234200530F24 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		8A070961222D271700530F24 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		8A070963222D337900530F24 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8A070967222D34E800530F24 /* AccauntCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccauntCoordinator.swift; sourceTree = "<group>"; };
+		8A070969222D34FF00530F24 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		8A07096B222D351600530F24 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		8A07096D222D35BC00530F24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8A858E6C222BE11A00BF23BA /* MVVM-Coordinator-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A858E6F222BE11A00BF23BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A858E74222BE11A00BF23BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +136,16 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		8A070966222D34C100530F24 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				8A070967222D34E800530F24 /* AccauntCoordinator.swift */,
+				8A070969222D34FF00530F24 /* AccountViewController.swift */,
+				8A07096B222D351600530F24 /* AccountViewModel.swift */,
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
 		8A858E63222BE11A00BF23BA = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 				8A858E8C222BE30000BF23BA /* Category.swift */,
 				8A858E8E222BE32400BF23BA /* Recipe.swift */,
 				8A070961222D271700530F24 /* Notification.swift */,
+				8A07096D222D35BC00530F24 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +221,7 @@
 				8A858EC6222C332800BF23BA /* Recipe */,
 				8A858E96222BE3C000BF23BA /* Category */,
 				8A070958222D22DA00530F24 /* Notifications */,
+				8A070966222D34C100530F24 /* account */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -413,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A858E88222BE28800BF23BA /* BaseCoordinator.swift in Sources */,
+				8A07096C222D351600530F24 /* AccountViewModel.swift in Sources */,
 				8A858EC0222C1C5800BF23BA /* ENV.swift in Sources */,
 				8A070957222D094800530F24 /* RecipeCoordinator.swift in Sources */,
 				8A858E93222BE37100BF23BA /* TabCoordinator.swift in Sources */,
@@ -420,11 +441,13 @@
 				8A858E83222BE1C800BF23BA /* AppCoordinator.swift in Sources */,
 				8A858E8A222BE2A000BF23BA /* StoryboardInitializable.swift in Sources */,
 				8A858E85222BE1DC00BF23BA /* CoordinatorProtocol.swift in Sources */,
+				8A07096A222D34FF00530F24 /* AccountViewController.swift in Sources */,
 				8A858EB8222C04B100BF23BA /* LentaCell.swift in Sources */,
 				8A858EA2222BE4FF00BF23BA /* CRListViewController.swift in Sources */,
 				8A07095C222D231E00530F24 /* NotificationViewController.swift in Sources */,
 				8A07095A222D230400530F24 /* NotificationCoordinator.swift in Sources */,
 				8A858E9D222BE47600BF23BA /* CategoryListViewModel.swift in Sources */,
+				8A070968222D34E800530F24 /* AccauntCoordinator.swift in Sources */,
 				8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */,
 				8A858E9B222BE43C00BF23BA /* CategoryListViewController.swift in Sources */,
 				8A858EA8222BE95300BF23BA /* MainTabBarController.swift in Sources */,
@@ -441,6 +464,7 @@
 				8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */,
 				8A070964222D337900530F24 /* Extensions.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,
+				8A07096E222D35BC00530F24 /* User.swift in Sources */,
 				8A070960222D234200530F24 /* NotificationCell.swift in Sources */,
 				8A070962222D271700530F24 /* Notification.swift in Sources */,
 				8A07095E222D233300530F24 /* NotificationViewModel.swift in Sources */,

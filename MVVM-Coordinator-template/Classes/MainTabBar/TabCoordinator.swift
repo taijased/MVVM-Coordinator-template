@@ -18,6 +18,7 @@ class TabCoordinator: AppCoordinator {
     let categoryCoordinator: CategoryCoordinator
     let lentaCoordinator: LentaCoordinator
     let notificationCoordinator: NotificationCoordinator
+    let accountCoordinator: AccountCoordinator
     
     
     override init(window: UIWindow){
@@ -33,6 +34,9 @@ class TabCoordinator: AppCoordinator {
         notificationCoordinator = NotificationCoordinator(tabController.navigationController)
         notificationCoordinator.start()
         
+        accountCoordinator = AccountCoordinator(tabController.navigationController)
+        accountCoordinator.start()
+        
         
         super.init(window: window)
         
@@ -47,12 +51,15 @@ class TabCoordinator: AppCoordinator {
         let categoryListViewController = categoryCoordinator.rootViewController!
         let lentaViewController = lentaCoordinator.rootViewController!
         let notificationViewController = notificationCoordinator.rootViewController!
-        
+        let accountViewController = accountCoordinator.rootViewController!
         
         setTabProperty(viewController: categoryListViewController, defaultImage: UIImage(named: "categories")!)
         setTabProperty(viewController: lentaViewController, defaultImage: UIImage(named: "home")!)
         setTabProperty(viewController: notificationViewController, defaultImage: UIImage(named: "notifications")!)
-
+        setTabProperty(viewController: accountViewController, defaultImage: UIImage(named: "user")!)
+        
+        
+        controllers.append(accountViewController.navigationController!)
         
         controllers.append(lentaViewController.navigationController!)
         controllers.append(categoryListViewController.navigationController!)
