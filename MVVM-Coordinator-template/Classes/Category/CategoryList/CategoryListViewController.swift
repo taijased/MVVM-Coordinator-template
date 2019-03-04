@@ -18,13 +18,8 @@ class CategoryListViewController: UIViewController, StoryboardInitializable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-        
-        
-        self.collectionView!.alwaysBounceVertical = true
-        self.refreshControl.tintColor = UIColor.red
-        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        self.collectionView!.addSubview(refreshControl)
-        
+        setupNavigationBar()
+        setupRefresher()
     }
     
     @objc func loadData() {
@@ -51,6 +46,29 @@ class CategoryListViewController: UIViewController, StoryboardInitializable {
     
     private func setupCategoryListCell(_ cell: CategoryListCell, _ category: Category) {
         cell.categoryTitle.text = category.title
+    }
+    
+    
+    func setupNavigationBar() {
+        //        убрать линию нижнюю
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        
+        //        хуйня чтобы загрузить нашу стрелку
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
+        
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+    }
+    func setupRefresher() {
+        self.collectionView!.alwaysBounceVertical = true
+        self.refreshControl.tintColor = UIColor.red
+        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.collectionView!.addSubview(refreshControl)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

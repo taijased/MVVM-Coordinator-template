@@ -29,12 +29,19 @@ class RecipeCoordinator: NavigationCoordinator {
         viewController.onSelectHidden = { [weak self] in
             self?.hiddenRecipe()
         }
+        viewController.onSubscribeMasterClass = { [weak self] in
+            self?.subscribeMasterClass()
+        }
         
         self.rootViewController = viewController
         navigationController?.present(viewController, animated: true)
         return Observable.never()
     }
     private func hiddenRecipe() {
+        self.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    private func subscribeMasterClass() {
         self.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }

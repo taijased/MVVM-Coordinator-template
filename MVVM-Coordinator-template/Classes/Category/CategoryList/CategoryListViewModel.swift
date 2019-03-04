@@ -11,7 +11,7 @@ import Foundation
 import RxSwift
 
 class CategoryListViewModel  {
-    public static var gg = 1
+    
     // MARK: - Inputs
     let selectCategory: AnyObserver<Category>
     // MARK: - Outputs
@@ -28,23 +28,16 @@ class CategoryListViewModel  {
     }
     
     func fetchCategory(){
-        if(CategoryListViewModel.gg == 1)
-        {
-            let category = [Category(title: "Для детей", iconUrl: "carden"),
-                            Category(title: "Для всей семьи", iconUrl: "carden"),
-                            Category(title: "Для животных", iconUrl: "carden")]
-            
-            self.category = Observable.just(category)
-            CategoryListViewModel.gg += 1
-        }
-        else
-        {
-            let category = [Category(title: "Красим", iconUrl: "carden"),
-                            Category(title: "Сад", iconUrl: "carden"),
-                            Category(title: "Из дерева", iconUrl: "carden")]
-            
-            self.category = Observable.just(category)
-        }
+    
+        let category = [Category(title: "Для детей", iconUrl: "carden"),
+                        Category(title: "Для всей семьи", iconUrl: "carden"),
+                        Category(title: "Для животных", iconUrl: "carden"),
+                        Category(title: "Красим", iconUrl: "carden"),
+                        Category(title: "Сад", iconUrl: "carden"),
+                        Category(title: "Из дерева", iconUrl: "carden")]
+    
+        self.category = Observable.just(category)
+        
     }
     
     
