@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		364CBAB756070E4001E87E06 /* Pods_MVVM_Coordinator_template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B863B9E598D90C884B602048 /* Pods_MVVM_Coordinator_template.framework */; };
+		8A070957222D094800530F24 /* RecipeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070956222D094800530F24 /* RecipeCoordinator.swift */; };
 		8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858E6F222BE11A00BF23BA /* AppDelegate.swift */; };
 		8A858E75222BE11A00BF23BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E73222BE11A00BF23BA /* Main.storyboard */; };
 		8A858E7A222BE11B00BF23BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E78222BE11B00BF23BA /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		4B8BCC28E39100EA780F888C /* Pods-MVVM-Coordinator-template.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM-Coordinator-template.debug.xcconfig"; path = "Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template.debug.xcconfig"; sourceTree = "<group>"; };
+		8A070956222D094800530F24 /* RecipeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCoordinator.swift; sourceTree = "<group>"; };
 		8A858E6C222BE11A00BF23BA /* MVVM-Coordinator-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A858E6F222BE11A00BF23BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A858E74222BE11A00BF23BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		8A858EC6222C332800BF23BA /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				8A070956222D094800530F24 /* RecipeCoordinator.swift */,
 				8A858EC7222C333C00BF23BA /* RecipeViewController.swift */,
 				8A858EC9222C357200BF23BA /* RecipeViewModel.swift */,
 			);
@@ -385,6 +388,7 @@
 			files = (
 				8A858E88222BE28800BF23BA /* BaseCoordinator.swift in Sources */,
 				8A858EC0222C1C5800BF23BA /* ENV.swift in Sources */,
+				8A070957222D094800530F24 /* RecipeCoordinator.swift in Sources */,
 				8A858E93222BE37100BF23BA /* TabCoordinator.swift in Sources */,
 				8A858EA6222BE53500BF23BA /* CRListCell.swift in Sources */,
 				8A858E83222BE1C800BF23BA /* AppCoordinator.swift in Sources */,

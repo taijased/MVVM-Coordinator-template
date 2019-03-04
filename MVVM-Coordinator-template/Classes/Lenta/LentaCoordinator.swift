@@ -12,9 +12,8 @@ import RxSwift
 
 class LentaCoordinator: NavigationCoordinator {
     
-    
+    var recipeCoordinator: RecipeCoordinator?
     override init(_ navigationController: UINavigationController?) {
-    
         super.init(navigationController)
     }
     override func start() -> Observable<Void> {
@@ -26,31 +25,27 @@ class LentaCoordinator: NavigationCoordinator {
         viewModel.showRecipe
             .subscribe(onNext: { [weak self] in self?.showRecipe(by: $0) })
             .disposed(by: disposeBag)
-        
         self.rootViewController = viewController
-        
         navigationController?.pushViewController(rootViewController!, animated: true)
         return Observable.never()
     }
     private func showRecipe(by recipe: Recipe) {
         
-        let viewController = RecipeViewController.initFromStoryboard(name: "Main")
+        recipeCoordinator = RecipeCoordinator(self.navigationController, recipe)
+        recipeCoordinator?.start()
+//        let viewController = RecipeViewController.initFromStoryboard(name: "Main")
+//
+//        viewController.viewModel = RecipeViewModel(recipe)
+//        viewController.viewModel.hiddenRecipe
+//            .subscribe(onNext: { [weak self] in self?.hiddenRecipe(by: $0) })
+//            .disposed(by: disposeBag)
+//
+//        viewController.title = recipe.title
+//        super.rootViewController?.navigationController?.pushViewController(viewController, animated: true)
         
-        viewController.viewModel = RecipeViewModel(recipe)
-        viewController.viewModel.hiddenRecipe
-            .subscribe(onNext: { [weak self] in self?.hiddenRecipe(by: $0) })
-            .disposed(by: disposeBag)
-        
-        viewController.title = recipe.title
-        super.rootViewController?.navigationController?.pushViewController(viewController, animated: true)
 //        self.rootViewController?.navigationController?.pushViewController(viewController, animated: true)s
 //        super.navigationController?.pushViewController(viewController, animated: true)
     }
-    private func hiddenRecipe(by recipe: Recipe) {
-        print(recipe)
-        
-    }
-    
     
 }
 

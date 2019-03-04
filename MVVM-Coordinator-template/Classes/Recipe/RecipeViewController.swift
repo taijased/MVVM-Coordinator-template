@@ -11,7 +11,12 @@ import UIKit
 class RecipeViewController: UIViewController, StoryboardInitializable {
     
 
+    var onSelectHidden: (() -> Void)?
     var viewModel: RecipeViewModel!
+    
+    @IBAction func hiddenRecipeTap(_ sender: Any) {
+        onSelectHidden?()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }

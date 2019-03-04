@@ -160,6 +160,9 @@
                                 <rect key="frame" x="169" y="115" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="hiddenRecipeTap:" destination="3oK-Pt-K76" eventType="touchUpInside" id="8wI-E1-Br5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
