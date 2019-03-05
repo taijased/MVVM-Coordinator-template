@@ -25,8 +25,9 @@ class CRListViewController: UIViewController, StoryboardInitializable {
         super.viewDidLoad()
         
         self.collectionView!.alwaysBounceVertical = true
-        self.refreshControl.tintColor = UIColor.red
-        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.refreshControl.tintColor = LM_COLOR
+        refreshControl.sendActions(for: .valueChanged)
+//        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         self.collectionView!.addSubview(refreshControl)
         
         setupBindings()
@@ -52,31 +53,29 @@ class CRListViewController: UIViewController, StoryboardInitializable {
             }
             .disposed(by: disposeBag)
             
-//            .disposed(by: disposeBag)
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.reload)
+            .disposed(by: disposeBag)
         collectionView.rx.modelSelected(Recipe.self)
             .bind(to: viewModel.selectRecipe)
             .disposed(by: disposeBag)
     }
     
     private func setupRecipeCell(_ cell: CRListCell, _ recipe: Recipe) {
-        
-        cell.recipeTitle?.text = recipe.title
-//        cell.recipeAuthor.text = recipe.author
-        cell.recipeTime.text = String(recipe.timing) + " минут"
-//        cell.recipeLike.text = String(recipe.likeCount)
-//        cell.recipeChat.text = String(recipe.commentCount)
-//
-//
-        //        DispatchQueue.global().async {
-        //            let url = URL(string: recipe.imageUrl)
-        //            DispatchQueue.main.async {
-        //                cell.recipeImage.kf.setImage(with: url)
-        //            }
-        //        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.global().async {
+                let url = URL(string: recipe.imageUrl)
+                DispatchQueue.main.async {
+                    cell.contentView.hideSkeleton()
+                    cell.recipeImage.kf.setImage(with: url)
+                    cell.recipeTitle?.text = recipe.title
+                    cell.recipeTime.text = String(recipe.timing) + " минут"
+                }
+            }
+        }
     }
     
     @objc func loadData() {
-//        viewModel.fetch()
         print("refresh")
         stopRefresher()
     }

@@ -39,8 +39,5 @@ class CategoryListViewModel  {
         self.category = Observable.just(category)
         
     }
-    
-    
-    
 }
 

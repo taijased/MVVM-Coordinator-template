@@ -24,10 +24,10 @@ class LentaCell: UICollectionViewCell {
     @IBOutlet weak var recipeChat: UILabel! { didSet { initSkeleton(recipeChat) } }
     @IBOutlet weak var recipeImage: UIImageView! {
         didSet {
-            
-            recipeImage.isSkeletonable = true
+    
             recipeImage.layer.cornerRadius = 10
             recipeImage.clipsToBounds = true
+            recipeImage.isSkeletonable = true
             recipeImage.showAnimatedGradientSkeleton()
         }
     }

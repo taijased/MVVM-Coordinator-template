@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import SkeletonView
 
 class CRListCell: UICollectionViewCell {
+    
+    
+    var gradient = SkeletonGradient(baseColor: UIColor.silver)
     
     
     @IBOutlet weak var recipeImage: UIImageView! {
         didSet {
             recipeImage.layer.cornerRadius = 10
             recipeImage.clipsToBounds = true
+            recipeImage.isSkeletonable = true
+            recipeImage.showAnimatedGradientSkeleton()
         }
     }
-    @IBOutlet weak var recipeTitle: UILabel!
-    @IBOutlet weak var recipeTime: UILabel!
+    @IBOutlet weak var timeImage: UIImageView! { didSet { initSkeleton(timeImage) } }
+    @IBOutlet weak var recipeTitle: UILabel! { didSet { initSkeleton(recipeTitle) } }
+    @IBOutlet weak var recipeTime: UILabel! { didSet { initSkeleton(recipeTime) } }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,5 +44,10 @@ class CRListCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+    
+    private func initSkeleton(_ view: UIView) {
+        view.isSkeletonable = true
+        view.showAnimatedGradientSkeleton(usingGradient: gradient)
     }
 }

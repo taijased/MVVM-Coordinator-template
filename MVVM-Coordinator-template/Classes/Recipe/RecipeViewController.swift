@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import SkeletonView
 
 class RecipeViewController: UIViewController, StoryboardInitializable {
     
-
-    @IBOutlet weak var recipeTitle: UILabel!
-    @IBOutlet weak var recipeAuthor: UILabel!
-    @IBOutlet weak var recipeTime: UILabel!
-    @IBOutlet weak var recipeLike: UILabel!
-    @IBOutlet weak var recipeChat: UILabel!
+    var gradient = SkeletonGradient(baseColor: UIColor.silver)
+    
+    @IBOutlet weak var btnSubscribeMock: UIButton!
+    @IBOutlet weak var recipeDescription: UITextView! { didSet { initSkeleton(recipeDescription) } }
+    @IBOutlet weak var recipeImage: UIImageView! {
+        didSet {
+            recipeImage.isSkeletonable = true
+            recipeImage.showAnimatedGradientSkeleton()
+        }
+    }
+    @IBOutlet weak var likeImageBtn: UIButton! { didSet { initSkeleton(likeImageBtn) } }
+    @IBOutlet weak var chatImageBtn: UIButton! { didSet { initSkeleton(chatImageBtn) } }
+    @IBOutlet weak var timeImage: UIImageView! { didSet { initSkeleton(timeImage) } }
+    @IBOutlet weak var recipeTitle: UILabel! { didSet { initSkeleton(recipeTitle) } }
+    @IBOutlet weak var recipeAuthor: UILabel! { didSet { initSkeleton(recipeAuthor) } }
+    @IBOutlet weak var recipeTime: UILabel! { didSet { initSkeleton(recipeTime) } }
+    @IBOutlet weak var recipeLike: UILabel! { didSet { initSkeleton(recipeLike) } }
+    @IBOutlet weak var recipeChat: UILabel! { didSet { initSkeleton(recipeChat) } }
     
     
     var onSelectHidden: (() -> Void)?
@@ -29,7 +42,6 @@ class RecipeViewController: UIViewController, StoryboardInitializable {
         }
     }
     
-    
     @IBAction func subscribeMasterClass(_ sender: UIButton) {
         onSubscribeMasterClass?()
     }
@@ -39,5 +51,10 @@ class RecipeViewController: UIViewController, StoryboardInitializable {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    private func initSkeleton(_ view: UIView) {
+        view.isSkeletonable = true
+        view.showAnimatedGradientSkeleton(usingGradient: gradient)
     }
 }

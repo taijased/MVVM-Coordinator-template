@@ -30,7 +30,6 @@ class LentaViewController: UIViewController, StoryboardInitializable, UICollecti
         refreshControl.sendActions(for: .valueChanged)
 //        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         self.collectionView!.addSubview(refreshControl)
-//        viewModel.cl.onNext("asd")
         
     }
     
@@ -54,7 +53,7 @@ class LentaViewController: UIViewController, StoryboardInitializable, UICollecti
     }
     
     private func setupRecipeCell(_ cell: LentaCell, _ recipe: Recipe) {
-        print("cell")
+        print("setupRecipeCell")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // пока все данные не прогрузились такой скелет
             DispatchQueue.global().async {
                 let url = URL(string: recipe.imageUrl)
@@ -92,22 +91,22 @@ class LentaViewController: UIViewController, StoryboardInitializable, UICollecti
     
     
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        print("scrollViewDidScroll")
-        if offsetY > contentHeight - scrollView.frame.height * 2 {
-
-            if !fetchingMore {
-                fetchingMore = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
-//                    self.viewModel.fetchMore()
-                    print("scroll")
-                    self.fetchingMore = false
-                })
-            }
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offsetY = scrollView.contentOffset.y
+//        let contentHeight = scrollView.contentSize.height
+//        print("scrollViewDidScroll")
+//        if offsetY > contentHeight - scrollView.frame.height * 2 {
+//
+//            if !fetchingMore {
+//                fetchingMore = true
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+////                    self.viewModel.fetchMore()
+//                    print("scroll")
+//                    self.fetchingMore = false
+//                })
+//            }
+//        }
+//    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)

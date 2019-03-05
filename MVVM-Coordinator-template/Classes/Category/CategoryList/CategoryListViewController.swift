@@ -45,7 +45,12 @@ class CategoryListViewController: UIViewController, StoryboardInitializable {
     }
     
     private func setupCategoryListCell(_ cell: CategoryListCell, _ category: Category) {
-        cell.categoryTitle.text = category.title
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            cell.contentView.hideSkeleton()
+            cell.categoryTitle.text = category.title
+        }
     }
     
     

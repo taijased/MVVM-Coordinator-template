@@ -250,11 +250,17 @@
                     </view>
                     <connections>
                         <outlet property="btnMasterClass" destination="YlO-ln-oyL" id="vdU-3F-vyJ"/>
+                        <outlet property="btnSubscribeMock" destination="YlO-ln-oyL" id="vHW-v9-r2M"/>
+                        <outlet property="chatImageBtn" destination="tqK-CT-7pb" id="IBC-Hc-5c8"/>
+                        <outlet property="likeImageBtn" destination="ob0-2q-sTE" id="5Zm-gZ-SG7"/>
                         <outlet property="recipeAuthor" destination="m2w-Xq-S0y" id="7ZL-Dp-tZd"/>
                         <outlet property="recipeChat" destination="B6o-ua-CHl" id="aiQ-AZ-pdc"/>
+                        <outlet property="recipeDescription" destination="4gQ-2W-c4g" id="DtG-pV-qK8"/>
+                        <outlet property="recipeImage" destination="ztO-68-eP1" id="Ci1-Mm-ree"/>
                         <outlet property="recipeLike" destination="pFt-Ow-F2d" id="aCR-hu-bVf"/>
                         <outlet property="recipeTime" destination="Orf-fM-eAo" id="8pj-7j-53t"/>
                         <outlet property="recipeTitle" destination="uYt-ax-bRG" id="liP-L3-BR9"/>
+                        <outlet property="timeImage" destination="SHN-vt-lMh" id="I04-mf-pDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCc-xU-lT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -301,6 +307,7 @@
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="categoryImage" destination="Scw-B7-F0P" id="fuk-jJ-2yB"/>
                                             <outlet property="categoryTitle" destination="9PG-Ip-biJ" id="z9h-s1-7uc"/>
                                         </connections>
                                     </collectionViewCell>
@@ -429,7 +436,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="181" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chair" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-o3-RXU">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-o3-RXU">
                                                     <rect key="frame" x="0.0" y="0.0" width="181" height="143"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -445,7 +452,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120 минут" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rki-Nb-Qs9">
-                                                    <rect key="frame" x="33" y="120" width="49" height="12"/>
+                                                    <rect key="frame" x="33" y="120" width="139" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -457,6 +464,7 @@
                                             <outlet property="recipeImage" destination="HUk-o3-RXU" id="AK5-yr-gzM"/>
                                             <outlet property="recipeTime" destination="Rki-Nb-Qs9" id="ttA-ee-gPL"/>
                                             <outlet property="recipeTitle" destination="cqz-VG-Rgc" id="AMh-Pw-9Yp"/>
+                                            <outlet property="timeImage" destination="hpH-8u-dGH" id="7R7-gD-dSi"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -471,7 +479,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4H-Gm-3W7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="-514"/>
+            <point key="canvasLocation" x="741.60000000000002" y="-514.09295352323841"/>
         </scene>
     </scenes>
     <resources>
