@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-
 class LentaViewController: UIViewController, StoryboardInitializable, UICollectionViewDelegate {
     
     let disposeBag = DisposeBag()
@@ -20,6 +19,7 @@ class LentaViewController: UIViewController, StoryboardInitializable, UICollecti
     var fetchingMore: Bool = false
     let cellIdentifier = "lentaCell"
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,23 +55,27 @@ class LentaViewController: UIViewController, StoryboardInitializable, UICollecti
     
     private func setupRecipeCell(_ cell: LentaCell, _ recipe: Recipe) {
         print("cell")
-        cell.recipeTitle?.text = recipe.title
-        cell.recipeAuthor.text = recipe.author
-        cell.recipeTime.text = String(recipe.timing) + " минут"
-        cell.recipeLike.text = String(recipe.likeCount)
-        cell.recipeChat.text = String(recipe.commentCount)
-        
-        if recipe.isNew {
-            cell.recipeNew.layer.cornerRadius = 13
-
-        } else {
-            //            cell.recipeNew.layer.isHidden = true
-            cell.recipeNew.backgroundColor = UIColor.red
-        }
-        DispatchQueue.global().async {
-            let url = URL(string: recipe.imageUrl)
-            DispatchQueue.main.async {
-                cell.recipeImage.kf.setImage(with: url)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // пока все данные не прогрузились такой скелет
+            DispatchQueue.global().async {
+                let url = URL(string: recipe.imageUrl)
+                DispatchQueue.main.async {
+                    cell.recipeImage.kf.setImage(with: url)
+                    cell.contentView.hideSkeleton()
+                    
+                    cell.recipeTitle?.text = recipe.title
+                    cell.recipeAuthor.text = recipe.author
+                    cell.recipeTime.text = String(recipe.timing) + " минут"
+                    cell.recipeLike.text = String(recipe.likeCount)
+                    cell.recipeChat.text = String(recipe.commentCount)
+                    
+                    if recipe.isNew {
+                        cell.recipeNew.layer.cornerRadius = 13
+                        
+                    } else {
+                        //            cell.recipeNew.layer.isHidden = true
+                        cell.recipeNew.backgroundColor = UIColor.red
+                    }
+                }
             }
         }
     }

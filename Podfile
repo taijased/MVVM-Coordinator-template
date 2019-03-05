@@ -9,7 +9,8 @@ target 'MVVM-Coordinator-template' do
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
 	pod 'Kingfisher'
-	pod 'Bond'
+	pod 'SkeletonView'
+
   # Pods for MVVM-Coordinator-template
 
 end

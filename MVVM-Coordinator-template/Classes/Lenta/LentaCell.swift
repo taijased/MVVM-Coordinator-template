@@ -8,32 +8,40 @@
 
 
 import UIKit
+import SkeletonView
 
 class LentaCell: UICollectionViewCell {
+    var gradient = SkeletonGradient(baseColor: UIColor.silver)
     
-    
-
-
-    
-    @IBOutlet weak var recipeNew: UIView!
-    @IBOutlet weak var recipeTitle: UILabel!
-    @IBOutlet weak var recipeAuthor: UILabel!
-    @IBOutlet weak var recipeTime: UILabel!
-    @IBOutlet weak var recipeLike: UILabel!
-    @IBOutlet weak var recipeChat: UILabel!
+    @IBOutlet weak var timeImage: UIImageView! { didSet { initSkeleton(timeImage) } }
+    @IBOutlet weak var likeImage: UIImageView! { didSet { initSkeleton(likeImage) } }
+    @IBOutlet weak var chatImage: UIImageView! { didSet { initSkeleton(chatImage) } }
+    @IBOutlet weak var recipeNew: UIView! { didSet { initSkeleton(recipeNew) } }
+    @IBOutlet weak var recipeTitle: UILabel! { didSet { initSkeleton(recipeTitle) } }
+    @IBOutlet weak var recipeAuthor: UILabel! { didSet { initSkeleton(recipeAuthor) } }
+    @IBOutlet weak var recipeTime: UILabel! { didSet { initSkeleton(recipeTime) } }
+    @IBOutlet weak var recipeLike: UILabel! { didSet { initSkeleton(recipeLike) } }
+    @IBOutlet weak var recipeChat: UILabel! { didSet { initSkeleton(recipeChat) } }
     @IBOutlet weak var recipeImage: UIImageView! {
         didSet {
+            
+            recipeImage.isSkeletonable = true
             recipeImage.layer.cornerRadius = 10
             recipeImage.clipsToBounds = true
+            recipeImage.showAnimatedGradientSkeleton()
         }
     }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupUI()
     }
     
-    func setupUI () {
+    private func initSkeleton(_ view: UIView) {
+        view.isSkeletonable = true
+        view.showAnimatedGradientSkeleton(usingGradient: gradient)        
+    }
+    
+    private func setupUI () {
         self.contentView.layer.cornerRadius = 4.0
         self.contentView.layer.borderWidth = 1.0
         self.contentView.layer.borderColor = UIColor.clear.cgColor

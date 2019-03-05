@@ -1,49 +1,41 @@
 PODS:
   - Alamofire (4.8.1)
-  - Bond (7.1.0):
-    - Differ (~> 1.3)
-    - ReactiveKit (~> 3.9)
-  - Differ (1.3.0)
   - Kingfisher (5.1.1)
-  - ReactiveKit (3.9.7)
   - RxAtomic (4.4.1)
   - RxCocoa (4.4.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.4.1):
     - RxAtomic (~> 4.4)
+  - SkeletonView (1.4.1)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
-  - Bond
   - Kingfisher
   - RxCocoa
   - RxSwift
+  - SkeletonView
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Bond
-    - Differ
     - Kingfisher
-    - ReactiveKit
     - RxAtomic
     - RxCocoa
     - RxSwift
+    - SkeletonView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  Bond: 4823d28dcb3b2d5fcc49bc6112f004db1e82fb22
-  Differ: 9fcee7602542d7c6484ce05a0faec1c11258ed63
   Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
-  ReactiveKit: 5f4c440715d671901c382ae6b42ed3337ce4699b
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  SkeletonView: 60d6ce7edb0cb4c7758db33c74add50392b3c475
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 0e0255fcbd5c1d0b949e61f5621dfba33aa58311
+PODFILE CHECKSUM: 81a2cfd5b1f3ac8252064f0c78a37bd313886873
 
 COCOAPODS: 1.6.1
