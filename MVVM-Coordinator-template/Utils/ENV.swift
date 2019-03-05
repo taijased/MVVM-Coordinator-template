@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 let BASE_URL = "https://api.static.tim.agency/tm_leroy_merlin/recipe?page="
+
+// LEROY MERLEN COLOR
+let LM_COLOR = UIColor(red: 102, green: 193, blue: 92)
 

@@ -25,6 +25,8 @@ class LentaCoordinator: NavigationCoordinator {
         viewModel.showRecipe
             .subscribe(onNext: { [weak self] in self?.showRecipe(by: $0) })
             .disposed(by: disposeBag)
+        viewModel.reload
+            
         self.rootViewController = viewController
         navigationController?.pushViewController(rootViewController!, animated: true)
         return Observable.never()

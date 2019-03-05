@@ -59,18 +59,18 @@ class TabCoordinator: AppCoordinator {
         setTabProperty(viewController: accountViewController, defaultImage: UIImage(named: "user")!)
         
         
-        controllers.append(accountViewController.navigationController!)
+        
         
         controllers.append(lentaViewController.navigationController!)
         controllers.append(categoryListViewController.navigationController!)
         controllers.append(notificationViewController.navigationController!)
+        controllers.append(accountViewController.navigationController!)
         
         
        
         tabController.viewControllers = controllers
         tabController.tabBar.isTranslucent = false
-//       to do set tab color selected
-        tabController.tabBar.tintColor = UIColor(red: 102, green: 193, blue: 92)
+        tabController.tabBar.tintColor = LM_COLOR
 //        add above shadow box
         
 //        tabController.tabBar.layer.opacity = 0.9

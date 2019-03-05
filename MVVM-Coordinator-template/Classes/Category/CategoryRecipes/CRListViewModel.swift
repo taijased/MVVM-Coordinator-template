@@ -42,19 +42,19 @@ class CRListViewModel  {
     }
     
     func fetch () {
-        dataManager.fetchRecipes(page: 1, count: self.count) { [weak self] items in
-            print("fetch")
-            self?.recipes = !items.isEmpty ? Observable.just(items) : Observable.just([])
-            self?.page += 1
-            
-        }
+//        dataManager.fetchRecipes(page: 1, count: self.count) { [weak self] items in
+//            print("fetch")
+////            self?.recipes = !items.isEmpty ? Observable.just(items) : Observable.just([])
+//            self?.page += 1
+//
+//        }
     }
     func fetchMore () {
-        dataManager.fetchRecipes(page: self.page, count: self.count) { [weak self] items in
-            //            self?.recipes += !items.isEmpty ? Observable.just(items) : Observable.just([])
-            //            how to concat array rxswift
-            print("infinityScroll")
-            self?.page += 1
-        }
+//        dataManager.fetchRecipes(page: self.page, count: self.count) { [weak self] items in
+//            //            self?.recipes += !items.isEmpty ? Observable.just(items) : Observable.just([])
+//            //            how to concat array rxswift
+//            print("infinityScroll")
+//            self?.page += 1
+//        }
     }
 }

@@ -12,7 +12,7 @@ import RxCocoa
 import Kingfisher
 
 
-class LentaViewController: UIViewController, StoryboardInitializable {
+class LentaViewController: UIViewController, StoryboardInitializable, UICollectionViewDelegate {
     
     let disposeBag = DisposeBag()
     var viewModel: LentaViewModel!
@@ -26,18 +26,27 @@ class LentaViewController: UIViewController, StoryboardInitializable {
         setupBindings()
         
         self.collectionView!.alwaysBounceVertical = true
-        self.refreshControl.tintColor = UIColor.red
-        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.refreshControl.tintColor = LM_COLOR
+        refreshControl.sendActions(for: .valueChanged)
+//        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         self.collectionView!.addSubview(refreshControl)
+//        viewModel.cl.onNext("asd")
+        
     }
     
     private func setupBindings() {
         viewModel.recipes
-            .observeOn(MainScheduler.instance)
-            .do(onNext: { [weak self] _ in self?.refreshControl.endRefreshing() })
+            .observeOn(MainScheduler.init())
+            .do(onNext: { [weak self] _ in
+                self?.refreshControl.endRefreshing()
+            })
             .bind(to: collectionView.rx.items(cellIdentifier: self.cellIdentifier, cellType: LentaCell.self)) { (_, recipe, cell) in
                 self.setupRecipeCell(cell, recipe)
             }
+            .disposed(by: disposeBag)
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.reload)
             .disposed(by: disposeBag)
         collectionView.rx.modelSelected(Recipe.self)
             .bind(to: viewModel.selectRecipe)
@@ -45,6 +54,7 @@ class LentaViewController: UIViewController, StoryboardInitializable {
     }
     
     private func setupRecipeCell(_ cell: LentaCell, _ recipe: Recipe) {
+        print("cell")
         cell.recipeTitle?.text = recipe.title
         cell.recipeAuthor.text = recipe.author
         cell.recipeTime.text = String(recipe.timing) + " минут"
@@ -58,16 +68,15 @@ class LentaViewController: UIViewController, StoryboardInitializable {
             //            cell.recipeNew.layer.isHidden = true
             cell.recipeNew.backgroundColor = UIColor.red
         }
-//        DispatchQueue.global().async {
-//            let url = URL(string: recipe.imageUrl)
-//            DispatchQueue.main.async {
-//                cell.recipeImage.kf.setImage(with: url)
-//            }
-//        }
+        DispatchQueue.global().async {
+            let url = URL(string: recipe.imageUrl)
+            DispatchQueue.main.async {
+                cell.recipeImage.kf.setImage(with: url)
+            }
+        }
     }
     
     @objc func loadData() {
-        viewModel.fetch()
         print("refresh")
         stopRefresher()
     }
@@ -76,17 +85,20 @@ class LentaViewController: UIViewController, StoryboardInitializable {
         self.refreshControl.endRefreshing()
     }
     
+    
+    
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-        
+        print("scrollViewDidScroll")
         if offsetY > contentHeight - scrollView.frame.height * 2 {
-            
+
             if !fetchingMore {
                 fetchingMore = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
-                    self.viewModel.fetchMore()
-//                    print("scroll")
+//                    self.viewModel.fetchMore()
+                    print("scroll")
                     self.fetchingMore = false
                 })
             }

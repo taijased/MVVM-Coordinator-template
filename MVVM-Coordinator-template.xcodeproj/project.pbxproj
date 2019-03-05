@@ -19,6 +19,7 @@
 		8A07096A222D34FF00530F24 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070969222D34FF00530F24 /* AccountViewController.swift */; };
 		8A07096C222D351600530F24 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07096B222D351600530F24 /* AccountViewModel.swift */; };
 		8A07096E222D35BC00530F24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07096D222D35BC00530F24 /* User.swift */; };
+		8A0A5DC3222DBA130033CD55 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A5DC2222DBA130033CD55 /* FeedCoordinator.swift */; };
 		8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858E6F222BE11A00BF23BA /* AppDelegate.swift */; };
 		8A858E75222BE11A00BF23BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E73222BE11A00BF23BA /* Main.storyboard */; };
 		8A858E7A222BE11B00BF23BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E78222BE11B00BF23BA /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		8A070969222D34FF00530F24 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		8A07096B222D351600530F24 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		8A07096D222D35BC00530F24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8A0A5DC2222DBA130033CD55 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		8A858E6C222BE11A00BF23BA /* MVVM-Coordinator-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A858E6F222BE11A00BF23BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A858E74222BE11A00BF23BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = account;
 			sourceTree = "<group>";
 		};
+		8A0A5DC1222DB9F00033CD55 /* BondFeed */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A5DC2222DBA130033CD55 /* FeedCoordinator.swift */,
+			);
+			path = BondFeed;
+			sourceTree = "<group>";
+		};
 		8A858E63222BE11A00BF23BA = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 		8A858E90222BE34800BF23BA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8A0A5DC1222DB9F00033CD55 /* BondFeed */,
 				8A858E91222BE35100BF23BA /* MainTabBar */,
 				8A858EB2222C047B00BF23BA /* Lenta */,
 				8A858EC6222C332800BF23BA /* Recipe */,
@@ -403,7 +414,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MVVM-Coordinator-template/Pods-MVVM-Coordinator-template-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -414,7 +428,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -465,6 +482,7 @@
 				8A070964222D337900530F24 /* Extensions.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,
 				8A07096E222D35BC00530F24 /* User.swift in Sources */,
+				8A0A5DC3222DBA130033CD55 /* FeedCoordinator.swift in Sources */,
 				8A070960222D234200530F24 /* NotificationCell.swift in Sources */,
 				8A070962222D271700530F24 /* Notification.swift in Sources */,
 				8A07095E222D233300530F24 /* NotificationViewModel.swift in Sources */,

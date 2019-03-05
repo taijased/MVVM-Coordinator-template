@@ -27,4 +27,20 @@ class Recipe {
         self.timing = timing
         self.guid = guid
     }
+    
+    static func initialize(from json: [String: Any]) -> Recipe?{
+        guard
+            let isLiked = json["isLiked"] as? Bool,
+            let isNew = json["isNew"] as? Bool,
+            let commentCount = json["commentCount"] as? Int,
+            let imageUrl = json["imageUrl"] as? String,
+            let likeCount = json["likeCount"] as? Int,
+            let title = json["title"] as? String,
+            let author = json["author"] as? String,
+            let timing = json["timing"] as? Int,
+            let guid = json["guid"] as? String
+            else { return nil }
+        
+        return Recipe(isLiked: isLiked, isNew: isNew, commentCount: commentCount, imageUrl: imageUrl, likeCount: likeCount, title: title, author: author, timing: timing, guid: guid)
+    }
 }
