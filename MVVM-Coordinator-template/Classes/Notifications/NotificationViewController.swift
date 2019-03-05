@@ -24,8 +24,13 @@ class NotificationViewController: UIViewController, StoryboardInitializable {
         setupBindings()
         setupNavigationBar()
         setupRefresher()
+        
+        setupNotificationBadge()
+        
     }
-    
+    func setupNotificationBadge() {
+        self.tabBarItem.badgeValue = "4"
+    }
    
     private func setupBindings() {
         viewModel.notification

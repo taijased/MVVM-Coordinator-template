@@ -10,7 +10,9 @@ import Foundation
 
 class RecipeViewModel  {
     
+    var recipe: Recipe
+    
     init(_ recipe: Recipe) {
-        
+        self.recipe = recipe
     }
 }

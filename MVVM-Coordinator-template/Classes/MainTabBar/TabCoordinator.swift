@@ -25,6 +25,7 @@ class TabCoordinator: AppCoordinator {
         
         tabController = MainTabBarController.initFromStoryboard(name: "Main")
         
+        
         lentaCoordinator = LentaCoordinator(tabController.navigationController)
         lentaCoordinator.start()
         
@@ -88,8 +89,9 @@ class TabCoordinator: AppCoordinator {
     
     
     private func setTabProperty(viewController: UIViewController, defaultImage: UIImage) {
+        
+        
         let tabBarItem = UITabBarItem(title: "", image: defaultImage, selectedImage: defaultImage)
-       
         viewController.tabBarItem = tabBarItem
     }
     
