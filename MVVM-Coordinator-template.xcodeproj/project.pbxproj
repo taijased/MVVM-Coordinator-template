@@ -19,7 +19,13 @@
 		8A07096A222D34FF00530F24 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A070969222D34FF00530F24 /* AccountViewController.swift */; };
 		8A07096C222D351600530F24 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07096B222D351600530F24 /* AccountViewModel.swift */; };
 		8A07096E222D35BC00530F24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07096D222D35BC00530F24 /* User.swift */; };
-		8A0A5DC3222DBA130033CD55 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A5DC2222DBA130033CD55 /* FeedCoordinator.swift */; };
+		8A609F8B222FC5C800F6AA20 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F8A222FC5C800F6AA20 /* SettingsCoordinator.swift */; };
+		8A609F8D222FC5DC00F6AA20 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F8C222FC5DC00F6AA20 /* SettingsViewController.swift */; };
+		8A609F8F222FC5F100F6AA20 /* SerttingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F8E222FC5F100F6AA20 /* SerttingsViewModel.swift */; };
+		8A609F93222FDC9D00F6AA20 /* SettingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F92222FDC9D00F6AA20 /* SettingCategory.swift */; };
+		8A609F95222FDCD400F6AA20 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F94222FDCD400F6AA20 /* SettingsCell.swift */; };
+		8A609F98222FE50000F6AA20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F97222FE50000F6AA20 /* ProfileViewController.swift */; };
+		8A609F9A222FE51000F6AA20 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A609F99222FE51000F6AA20 /* ProfileViewModel.swift */; };
 		8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A858E6F222BE11A00BF23BA /* AppDelegate.swift */; };
 		8A858E75222BE11A00BF23BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E73222BE11A00BF23BA /* Main.storyboard */; };
 		8A858E7A222BE11B00BF23BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A858E78222BE11B00BF23BA /* LaunchScreen.storyboard */; };
@@ -63,7 +69,13 @@
 		8A070969222D34FF00530F24 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		8A07096B222D351600530F24 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		8A07096D222D35BC00530F24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		8A0A5DC2222DBA130033CD55 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		8A609F8A222FC5C800F6AA20 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		8A609F8C222FC5DC00F6AA20 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8A609F8E222FC5F100F6AA20 /* SerttingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerttingsViewModel.swift; sourceTree = "<group>"; };
+		8A609F92222FDC9D00F6AA20 /* SettingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCategory.swift; sourceTree = "<group>"; };
+		8A609F94222FDCD400F6AA20 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		8A609F97222FE50000F6AA20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8A609F99222FE51000F6AA20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8A858E6C222BE11A00BF23BA /* MVVM-Coordinator-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Coordinator-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A858E6F222BE11A00BF23BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A858E74222BE11A00BF23BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,16 +156,30 @@
 				8A070967222D34E800530F24 /* AccauntCoordinator.swift */,
 				8A070969222D34FF00530F24 /* AccountViewController.swift */,
 				8A07096B222D351600530F24 /* AccountViewModel.swift */,
+				8A609F89222FC5AC00F6AA20 /* Settings */,
 			);
 			path = account;
 			sourceTree = "<group>";
 		};
-		8A0A5DC1222DB9F00033CD55 /* BondFeed */ = {
+		8A609F89222FC5AC00F6AA20 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				8A0A5DC2222DBA130033CD55 /* FeedCoordinator.swift */,
+				8A609F8A222FC5C800F6AA20 /* SettingsCoordinator.swift */,
+				8A609F8C222FC5DC00F6AA20 /* SettingsViewController.swift */,
+				8A609F8E222FC5F100F6AA20 /* SerttingsViewModel.swift */,
+				8A609F94222FDCD400F6AA20 /* SettingsCell.swift */,
+				8A609F96222FE4DD00F6AA20 /* Profile */,
 			);
-			path = BondFeed;
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8A609F96222FE4DD00F6AA20 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8A609F97222FE50000F6AA20 /* ProfileViewController.swift */,
+				8A609F99222FE51000F6AA20 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		8A858E63222BE11A00BF23BA = {
@@ -219,6 +245,7 @@
 				8A858E8E222BE32400BF23BA /* Recipe.swift */,
 				8A070961222D271700530F24 /* Notification.swift */,
 				8A07096D222D35BC00530F24 /* User.swift */,
+				8A609F92222FDC9D00F6AA20 /* SettingCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,7 +253,6 @@
 		8A858E90222BE34800BF23BA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8A0A5DC1222DB9F00033CD55 /* BondFeed */,
 				8A858E91222BE35100BF23BA /* MainTabBar */,
 				8A858EB2222C047B00BF23BA /* Lenta */,
 				8A858EC6222C332800BF23BA /* Recipe */,
@@ -455,19 +481,25 @@
 				8A858E8A222BE2A000BF23BA /* StoryboardInitializable.swift in Sources */,
 				8A858E85222BE1DC00BF23BA /* CoordinatorProtocol.swift in Sources */,
 				8A07096A222D34FF00530F24 /* AccountViewController.swift in Sources */,
+				8A609F8F222FC5F100F6AA20 /* SerttingsViewModel.swift in Sources */,
 				8A858EB8222C04B100BF23BA /* LentaCell.swift in Sources */,
 				8A858EA2222BE4FF00BF23BA /* CRListViewController.swift in Sources */,
 				8A07095C222D231E00530F24 /* NotificationViewController.swift in Sources */,
+				8A609F95222FDCD400F6AA20 /* SettingsCell.swift in Sources */,
 				8A07095A222D230400530F24 /* NotificationCoordinator.swift in Sources */,
 				8A858E9D222BE47600BF23BA /* CategoryListViewModel.swift in Sources */,
 				8A070968222D34E800530F24 /* AccauntCoordinator.swift in Sources */,
+				8A609F98222FE50000F6AA20 /* ProfileViewController.swift in Sources */,
 				8A858E70222BE11A00BF23BA /* AppDelegate.swift in Sources */,
 				8A858E9B222BE43C00BF23BA /* CategoryListViewController.swift in Sources */,
 				8A858EA8222BE95300BF23BA /* MainTabBarController.swift in Sources */,
 				8A858ECA222C357200BF23BA /* RecipeViewModel.swift in Sources */,
 				8A858E99222BE40800BF23BA /* CategoryCoordinator.swift in Sources */,
+				8A609F93222FDC9D00F6AA20 /* SettingCategory.swift in Sources */,
 				8A858EBD222C1B5600BF23BA /* WorkshopAPI.swift in Sources */,
 				8A858EB1222BEC1A00BF23BA /* NavigationCoordinator.swift in Sources */,
+				8A609F8D222FC5DC00F6AA20 /* SettingsViewController.swift in Sources */,
+				8A609F9A222FE51000F6AA20 /* ProfileViewModel.swift in Sources */,
 				8A858EBA222C056A00BF23BA /* LentaCoordinator.swift in Sources */,
 				8A858E9F222BE49A00BF23BA /* CategoryListCell.swift in Sources */,
 				8A858EA4222BE50C00BF23BA /* CRListViewModel.swift in Sources */,
@@ -476,9 +508,9 @@
 				8A858E8D222BE30000BF23BA /* Category.swift in Sources */,
 				8A858EB6222C04A300BF23BA /* LentaViewModel.swift in Sources */,
 				8A070964222D337900530F24 /* Extensions.swift in Sources */,
+				8A609F8B222FC5C800F6AA20 /* SettingsCoordinator.swift in Sources */,
 				8A858E8F222BE32400BF23BA /* Recipe.swift in Sources */,
 				8A07096E222D35BC00530F24 /* User.swift in Sources */,
-				8A0A5DC3222DBA130033CD55 /* FeedCoordinator.swift in Sources */,
 				8A070960222D234200530F24 /* NotificationCell.swift in Sources */,
 				8A070962222D271700530F24 /* Notification.swift in Sources */,
 				8A07095E222D233300530F24 /* NotificationViewModel.swift in Sources */,

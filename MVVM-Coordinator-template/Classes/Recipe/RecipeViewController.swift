@@ -50,10 +50,23 @@ class RecipeViewController: UIViewController, StoryboardInitializable {
     @IBAction func hiddenRecipeTap(_ sender: Any) {
         onSelectHidden?()
     }
+    
+    
+    
+//    init
     override func viewDidLoad() {
         super.viewDidLoad()
+//        super.navigationController?.prefersStatusBarHidden = true
         setupUI()
+        setupBindings()
+        
     }
+    private func setupBindings() {
+//                cancelBtn.rx.tap
+//                    .bind(to: viewModel.cancel)
+//                    .disposed(by: disposeBag)
+    }
+    
     
     func setupUI() {
         
@@ -61,7 +74,6 @@ class RecipeViewController: UIViewController, StoryboardInitializable {
             let url = URL(string: self.viewModel.recipe.imageUrl)
             DispatchQueue.main.async {
                 self.view.hideSkeleton()
-                
                 self.recipeImage.kf.setImage(with: url)
                 self.recipeTitle.text = self.viewModel.recipe.title
                 self.recipeAuthor.text = self.viewModel.recipe.author
@@ -74,7 +86,9 @@ class RecipeViewController: UIViewController, StoryboardInitializable {
         
     }
     
-    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     private func initSkeleton(_ view: UIView) {
         view.isSkeletonable = true
         view.showAnimatedGradientSkeleton(usingGradient: gradient)

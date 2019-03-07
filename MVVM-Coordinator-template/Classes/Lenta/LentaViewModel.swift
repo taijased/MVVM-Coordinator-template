@@ -22,6 +22,7 @@
    
         
         let reload: AnyObserver<Void>
+        
         let page: AnyObserver<Int>
 
         // MARK: - Outputs
@@ -43,13 +44,14 @@
             let _reload = PublishSubject<Void>()
             self.reload = _reload.asObserver()
             
+            
             let _currentPage = BehaviorSubject<Int>(value: 1)
             self.page = _currentPage.asObserver()
             
             self.recipes = Observable.just([])
             self.recipes = Observable.combineLatest( _reload, _currentPage) { _, page in page }
                 .flatMapLatest { page in
-                        self.dataManager.fetchRecipes2(page: self.pageValue, count: self.count)
+                        self.dataManager.fetchRecipes2(page: page, count: self.count)
                             .catchError { error in
                                 print(error.localizedDescription)
                                 return Observable.empty()

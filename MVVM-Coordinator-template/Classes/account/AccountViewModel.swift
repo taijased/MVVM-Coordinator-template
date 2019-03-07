@@ -11,31 +11,21 @@ import RxSwift
 class AccountViewModel  {
     
     // MARK: - Inputs
-    let selectNotification: AnyObserver<Notification>
+    
+    let setting: AnyObserver<Void>
+    
     // MARK: - Outputs
-    let showNotification: Observable<Notification>
-    var notification: Observable<[Notification]>
+    
+    let didSetting: Observable<Void>
+    
+    let user: User
     
     init() {
-        self.notification = Observable.just([])
-        let _selectNotification = PublishSubject<Notification>()
-        self.selectNotification = _selectNotification.asObserver()
-        self.showNotification = _selectNotification.asObservable()
+        let _setting = PublishSubject<Void>()
+        self.setting = _setting.asObserver()
+        self.didSetting = _setting.asObservable()
         
-        fetchCategory()
+        self.user = User(name: "Иван Иванов", login: "taijased", followers: 134, following: 43)
+
     }
-    
-    func fetchCategory(){
-        
-        let notification = [Notification(title: "Алена Нам начала проходить квест Звездный десант ", time: "4 часа назад"),
-                            Notification(title: "Алексей Антипин приглашает вас пройти квест Дожить до рассвета", time: "2 часа назад"),
-                            Notification(title: "Александр Имашев прошел квест В поисках потерянной локации и оставил отзыв", time: "2  дня назад"),
-                            Notification(title: "Артем Новиков приглашает вас пройти квест Выйди из комнаты", time: "вчера")]
-        
-        self.notification = Observable.just(notification)
-        
-    }
-    
-    
-    
 }

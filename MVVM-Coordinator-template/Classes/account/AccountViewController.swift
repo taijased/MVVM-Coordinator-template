@@ -16,41 +16,53 @@ class AccountViewController: UIViewController, StoryboardInitializable {
     let disposeBag = DisposeBag()
     var viewModel: AccountViewModel!
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var settingBtn: UIButton!
+    @IBOutlet weak var userLogin: UILabel!
+    @IBOutlet weak var userFollowers: UIButton!
+    @IBOutlet weak var userFollowing: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
-//        setupNavigationBar()
+        setupUI()
+        setupNavigationBar()
     }
     
     
     private func setupBindings() {
-//        viewModel.notification
-//            .observeOn(MainScheduler.instance)
-//            .do(onNext: { [weak self] _ in self?.refreshControl.endRefreshing() })
-//            .bind(to: collectionView.rx.items(cellIdentifier: self.cellIdentifier, cellType: NotificationCell.self)) { (_, notification, cell) in
-//                self.setupNotificationCell(cell, notification)
-//            }
-//            .disposed(by: disposeBag)
-//        collectionView.rx.modelSelected(Notification.self)
-//            .bind(to: viewModel.selectNotification)
-//            .disposed(by: disposeBag)
+        
+        
+        
+        
+        settingBtn.rx.tap
+            .bind(to: viewModel.setting)
+            .disposed(by: disposeBag)
+    }
+    private func setupUI() {
+        self.userName.text = viewModel.user.name
+        self.userLogin.text = viewModel.user.login
+        self.userFollowers.titleLabel?.text = String(viewModel.user.followers)
+        self.userFollowing.titleLabel?.text = String(viewModel.user.following)
     }
     
-//
-//    func setupNavigationBar() {
-//        //        убрать линию нижнюю
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//
-//        //        хуйня чтобы загрузить нашу стрелку
-//        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
-//
-//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
-//
-//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
-//
-//        self.navigationController?.navigationBar.tintColor = UIColor.black
-//    }
+
+    private func setupNavigationBar() {
+       
+        //        убрать линию нижнюю
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
+        //        хуйня чтобы загрузить нашу стрелку
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
+
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
+
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

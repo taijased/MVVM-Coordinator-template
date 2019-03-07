@@ -56,7 +56,7 @@ class CategoryListViewController: UIViewController, StoryboardInitializable {
     
     func setupNavigationBar() {
         //        убрать линию нижнюю
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         

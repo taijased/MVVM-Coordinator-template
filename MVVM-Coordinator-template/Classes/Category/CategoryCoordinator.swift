@@ -26,7 +26,6 @@ class CategoryCoordinator: NavigationCoordinator {
         viewModel.showCategoryRecipes
             .subscribe(onNext: { [weak self] in self?.showCategoryRecipes(by: $0) })
             .disposed(by: disposeBag)
-        
         self.rootViewController = viewController
         
         navigationController?.pushViewController(rootViewController!, animated: true)

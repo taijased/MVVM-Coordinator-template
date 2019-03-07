@@ -29,7 +29,7 @@ class CRListViewController: UIViewController, StoryboardInitializable {
         refreshControl.sendActions(for: .valueChanged)
 //        self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         self.collectionView!.addSubview(refreshControl)
-        
+        collectionView!.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 50, right: 0)
         setupBindings()
     }
     

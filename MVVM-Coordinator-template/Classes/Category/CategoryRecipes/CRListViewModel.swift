@@ -13,7 +13,7 @@ class CRListViewModel  {
     
     private let dataManager: WorkshopAPI
 //    private var page: Int = 1
-    private var count: Int = 5
+    private var count: Int = 8
     var infinity: Bool = true
     
     

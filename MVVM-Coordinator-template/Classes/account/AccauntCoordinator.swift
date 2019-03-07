@@ -13,6 +13,8 @@ import RxSwift
 
 class AccountCoordinator: NavigationCoordinator {
     
+    var settingsCoordinator: SettingsCoordinator?
+    
     
     override init(_ navigationController: UINavigationController?) {
         super.init(navigationController)
@@ -22,28 +24,15 @@ class AccountCoordinator: NavigationCoordinator {
         let viewModel = AccountViewModel()
         let viewController = AccountViewController.initFromStoryboard(name: "Main")
         viewController.viewModel = viewModel
-//        viewModel.showNotification
-//            .subscribe(onNext: { [weak self] in self?.showNotification(by: $0) })
-//            .disposed(by: disposeBag)
-        
+        viewModel.didSetting
+            .subscribe(onNext: { [weak self] in self?.showSettingsScreen() })
+            .disposed(by: disposeBag)
         self.rootViewController = viewController
-        
         navigationController?.pushViewController(rootViewController!, animated: true)
         return Observable.never()
     }
-    private func showNotification(by notification: Notification) {
-        print(notification.title)
-        
-        //        let viewController = CRListViewController.initFromStoryboard(name: "Main")
-        //        viewController.viewModel = CRListViewModel(category: category)
-        //        viewController.title = category.title
-        //        viewController.viewModel.showRecipe
-        //            .subscribe(onNext: { [weak self] in self?.showRecipe(by: $0) })
-        //            .disposed(by: disposeBag)
-        //        super.navigationController?.pushViewController(viewController, animated: true)
+    private func showSettingsScreen() {
+        settingsCoordinator = SettingsCoordinator(self.navigationController)
+        settingsCoordinator?.start()
     }
-    
 }
-
-
-
