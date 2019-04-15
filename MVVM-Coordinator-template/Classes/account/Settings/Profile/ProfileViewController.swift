@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController, StoryboardInitializable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupUI()
         setupBindings()
         

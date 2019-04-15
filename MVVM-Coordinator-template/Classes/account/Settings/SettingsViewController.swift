@@ -20,6 +20,8 @@ class SettingsViewController: UIViewController, StoryboardInitializable {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

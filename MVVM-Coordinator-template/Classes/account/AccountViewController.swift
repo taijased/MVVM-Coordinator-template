@@ -32,10 +32,6 @@ class AccountViewController: UIViewController, StoryboardInitializable {
     
     
     private func setupBindings() {
-        
-        
-        
-        
         settingBtn.rx.tap
             .bind(to: viewModel.setting)
             .disposed(by: disposeBag)
@@ -45,6 +41,7 @@ class AccountViewController: UIViewController, StoryboardInitializable {
         self.userLogin.text = viewModel.user.login
         self.userFollowers.titleLabel?.text = String(viewModel.user.followers)
         self.userFollowing.titleLabel?.text = String(viewModel.user.following)
+        
     }
     
 

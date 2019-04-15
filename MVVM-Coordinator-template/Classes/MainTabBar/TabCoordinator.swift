@@ -61,10 +61,11 @@ class TabCoordinator: AppCoordinator {
         
         
         
-        controllers.append(accountViewController.navigationController!)
+        
         controllers.append(lentaViewController.navigationController!)
         controllers.append(categoryListViewController.navigationController!)
         controllers.append(notificationViewController.navigationController!)
+        controllers.append(accountViewController.navigationController!)
         
         
         
